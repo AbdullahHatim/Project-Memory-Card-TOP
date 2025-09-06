@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
+import { ImageFetcher } from './ImageFetcher'
+import { GameTable } from './GameTable'
 
+// ImageFetcher()
 function App() {
 
   return (
     <>
-      <div>
-       Hello
-      </div>
+      <GameTable/>
     </>
   )
 }

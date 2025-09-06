@@ -3,18 +3,19 @@ import { Card } from "./Card";
 import { Score } from "./Score";
 import { ImageFetcher } from "./ImageFetcher";
 
-function getCards() {
+async function getCards() {
   const cards = [];
+  const images = await ImageFetcher();
   for(let i = 0; i < 10; i++){
     cards.push(
-    <Card key={i} id={i}/>
+    <Card key={i} id={i} image={images[i]}/>
   )
   }
   return cards;
 }
-const cards = getCards()
+const cards = await getCards()
 
-
+// Copied
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     // Pick a random index from 0 to i
@@ -25,7 +26,7 @@ function shuffleArray(array) {
   return array;
 }
 
-export function GameTable({score, setScore}) {
+export function GameTable({setScore}) {
 
   const clickHandler = (e) => {
     const card = e.target

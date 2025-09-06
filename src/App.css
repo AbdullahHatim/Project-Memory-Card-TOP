@@ -1,0 +1,66 @@
+#root{
+  --color-1: #0d6ecf;
+  --fcolor-1: #ffffff;
+  --max-table-width: 1300px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+header .score{
+  font-size: large;
+  padding-right: 3em;
+}
+
+.game-table{
+  max-width: var(--max-table-width);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  row-gap: 1rem;
+}
+
+.card{
+  --width: 250px;
+  --img-width: calc(var(--width) - 60px);
+  --img-height: calc(var(--width) - 60px);
+  --border-radius: 30px;
+  max-width: var(--width);
+  background-color: var(--color-1);
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  border-radius: var(--border-radius);
+  
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  /* Disable Click Events on Children */
+  *{
+    pointer-events: none;
+  }
+  .img{
+    width: var(--img-width);
+    height: var(--img-height);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: inherit;
+  }
+  p{
+    color: var(--fcolor-1);
+  }
+}
+
+.card:hover{
+  rotate: 10deg;
+}
+.card:active{
+  transform: scale(0.9);
+}

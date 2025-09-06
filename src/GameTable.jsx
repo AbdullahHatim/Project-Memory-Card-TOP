@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card } from "./Card";
 import { Score } from "./Score";
+import { ImageFetcher } from "./ImageFetcher";
 
 function getCards() {
   const cards = [];
@@ -24,8 +25,7 @@ function shuffleArray(array) {
   return array;
 }
 
-export function GameTable() {
-  const [score, setScore] = useState({current: 0, best : 0});
+export function GameTable({score, setScore}) {
 
   const clickHandler = (e) => {
     const card = e.target
@@ -39,13 +39,8 @@ export function GameTable() {
   
 
   return (
-    <>
-      <div>
-        <div>{score.current}</div><div>{score.best}</div>
-      </div>
-      <div onClick={clickHandler}>
+    <div onClick={clickHandler} className="game-table">
       {shuffleArray(cards)}
-      </div>
-    </>
+    </div>
   )
 }

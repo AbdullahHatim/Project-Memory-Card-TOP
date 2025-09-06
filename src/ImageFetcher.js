@@ -10,9 +10,10 @@ export async function ImageFetcher() {
         title: gif.title
       })
     )
-    console.log(images)
+    console.log("Fetched");
     return images
   } catch(error) {
     console.error('Error: ' + error)
   }
+
 }

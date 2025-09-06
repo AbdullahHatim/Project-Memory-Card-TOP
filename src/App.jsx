@@ -5,7 +5,7 @@ import { GameTable } from './GameTable'
 import { Header } from './Header'
 // ImageFetcher()
 function App() {
-  const [score, setScore] = useState({current: 0, best : 0});
+  const [score, setScore] = useState({current: 0, best: 0});
   return (
     <>
       <Header score={score}/>
